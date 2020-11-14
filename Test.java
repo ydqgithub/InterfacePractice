@@ -7,70 +7,70 @@ public class Test {
 	/**
 	 * @param args
 	 */
-	static final float standard=5000; 
+	static final float regulation=5000; 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Doctor dc1=new Doctor();
-		Doctor dc2=new Doctor();
+		Doctor doctor1=new Doctor();
+		Doctor doctor2=new Doctor();
   		Test T=new Test();
 		
 		try{
-			T.exPeriment(dc1);
-			System.out.println("ÒÑ²éÑ¯");
-			T.exPeriment(dc2);
+			T.sp(doctor1);
+			System.out.println("å·²æŸ¥è¯¢");
+			T.sp(doctor2);
 		}catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("¸ñÊ½´íÎó£¡try again");
+			System.out.println("æ ¼å¼é”™è¯¯ï¼try again");
 		}
 		
 	}
-	float yearPay(float pay){
+	float yPay(float pay){
 		return pay*12;
 	}
-	float yearFee(float fee){
+	float yFee(float fee){
 		return fee*2;
 	}
-	float earnings(float yp,float yf){
+	float liyi(float yp,float yf){
 		float z;
 		z=yp-yf;
 		return z;
 	}
-	float tax(float sum){
+	float shui(float sum){
 		double m;
-		if(sum<=standard){
+		if(sum<=regulation){
 			m=0;
-		}else if(sum>standard&&sum<=8000){
-			m=standard*0.03;
+		}else if(sum>regulation&&sum<=8000){
+			m=regulation*0.03;
 		}else if(sum>8000&&sum<=17000){
-			m=standard*0.1;
+			m=regulation*0.1;
 		}else if(sum>17000&&sum<=30000){
-			m=standard*0.2;
+			m=regulation*0.2;
 		}else{
-			m=standard*0.3;
+			m=regulation*0.3;
 		}
 		return (float) m;
 		
 	}
-	void exPeriment(Doctor DC){
+	void sp(Doctor doctor){
 
 		float n;
 		
 		Scanner sc=new Scanner(System.in);
-		System.out.println("ÇëÊäÈëĞÕÃû£º");
-		DC.name=sc.next();
-		System.out.println("ÇëÊäÈëÄêÁä£º");
-		DC.age=sc.nextInt();
-		System.out.println("ÇëÊäÈëĞÔ±ğ£º");
-		DC.sex=sc.next();
-		System.out.println("ÇëÊäÈëÃ¿ÔÂĞ½Ë®£º");
-		DC.pay=sc.nextFloat();
-		System.out.println("ÇëÊäÈëÃ¿Ñ§ÆÚÑ§·Ñ£º");
-		DC.fee=sc.nextFloat();
-		n=earnings(DC.pay, DC.fee);
+		System.out.println("è¯·è¾“å…¥å§“åï¼š");
+		doctor.name=sc.next();
+		System.out.println("è¯·è¾“å…¥å¹´é¾„ï¼š");
+		doctor.age=sc.nextInt();
+		System.out.println("è¯·è¾“å…¥æ€§åˆ«ï¼š");
+		doctor.sex=sc.next();
+		System.out.println("è¯·è¾“å…¥æ¯æœˆè–ªæ°´ï¼š");
+		doctor.pay=sc.nextFloat();
+		System.out.println("è¯·è¾“å…¥æ¯å­¦æœŸå­¦è´¹ï¼š");
+		doctor.fee=sc.nextFloat();
+		n=liyi(doctor.pay, doctor.fee);
 		System.out.println(n);
-		System.out.println(tax(n));
-		System.out.println(DC.name+"µÄÄêÁä£º"+DC.age+",ĞÔ±ğ£º"+DC.sex+",ÄêĞ½Ë®£º"+yearPay(DC.pay)
-				+",Ã¿ÄêÑ§·Ñ£º"+yearFee(DC.fee)+",Ã¿ÄêÄÉË°¶î£º"+tax(n));
+		System.out.println(shui(n));
+		System.out.println(doctor.name+"çš„å¹´é¾„ï¼š"+doctor.age+",æ€§åˆ«ï¼š"+doctor.sex+",å¹´è–ªæ°´ï¼š"+yPay(doctor.pay)
+				+",æ¯å¹´å­¦è´¹ï¼š"+yFee(doctor.fee)+",æ¯å¹´çº³ç¨é¢ï¼š"+shui(n));
 			}
 
 }
