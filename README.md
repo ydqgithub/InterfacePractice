@@ -16,7 +16,7 @@
 * 3.国家最新纳税标准（系数），属于某一时期的特定固定值，与实例化对象没有关系，考虑如何用static 、 final 修饰定义；
 * 4.实例化研究生类时，可采用运行时通过main方法的参数args一次性赋值，也可以采用Scanner类实现运行时交互式输入；
 * 5.根据输入情况，要在程序中做异常处理；
-### 三、实验过程
+### 四、实验过程
 1.建立学生和老师两个接口，定义每个接口基本属性，eg：Student<br/>
 
     public void Fee(Float f);
@@ -33,52 +33,47 @@
     
 3.建立测试类，实例化Doctor类、Test类，定义求年薪年学费以及年纳税额方法。<br/>
 
-    DoctoralCandidate dc1=new DoctoralCandidate();
-		DoctoralCandidate dc2=new DoctoralCandidate();
-  		Test T=new Test();
+    Doctor doctor1=new Doctor();
+    Doctor doctor2=new Doctor();
+  	Test T=new Test();
       
-      T.exPeriment(dc1);
-      T.exPeriment(dc2);
-      
- ### 四、核心代码     
-1.在Test类中定义计算年薪的方法yearPay()、计算每年学费的方法yearFee()和计算研究生每年总收益的方法earnings()以及计算每年纳税额的方法tax()。<br/>
+4.测试类中使用try...catch捕获异常。
 
-    float earnings(float yp,float yf){
-		float z;
-		z=yp-yf;
-		return z;
-	} 
-   > * 年薪减去每年需支付的学费得到每年总收益
-   
-    static final float standard=5000; 
-  
-      if(sum<=standard){
-			m=0;
-		}else if(sum>standard&&sum<=8000){
-			m=standard*0.03;
-   > * 根据国家最新纳税标准通过使用if()else{}语句实现算法，并且将标准工资定义为static final类型   
-   
-2.在Test类中定义方法exPeriment(DoctoralCandidate DC)，参数为**博士研究生**类的一个对象。此方法实现获取用户的基本信息。使用Scanner类实现扫描控制台，通过XX.nextXX()读取控制台输入的内容。最后通过System.outXXX输出语句调用yearPay()、yearFee()、earnings()和tax()输出基本信息和纳税额。<br/>
-
-    Scanner sc=new Scanner(System.in);
-    
-    DC.name=sc.next();
-    DC.age=sc.nextInt();
-    DC.sex=sc.next();
-    DC.pay=sc.nextFloat();
-    DC.fee=sc.nextFloat();
-   > * 需要注意的是读取年薪pay和每年学费fee时需要nextFloat，否则键盘输入float型数字，Scanner读取控制台内容时会出错。因为接口中定义的年薪和学费为float类型。<br/>
-   
-3.由于键盘键入信息时，属性有数据类型的限制，所以main方法中使用try()catch(){}语句进行异常捕获。将实例化的两个对象通过参数传值给对象T调用的exPeriment()方法。<br/>
-
-    try{
-			T.exPeriment(dc1);
-			System.out.println("~ ~ ~以上为您的纳税信息~ ~ ~");
-			T.exPeriment(dc2);
+		try{
+			T.sp(doctor1);
+			System.out.println("已查询");
+			T.sp(doctor2);
 		}catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("格式错误！请重新输入");
+			System.out.println("格式错误！try again");
 		}
+		
+      
+ ### 五、核心代码     
+1.使用Scanner实现键盘输入。<br/>
+
+		Scanner sc=new Scanner(System.in);
+   
+2.将标准工资定义为最终不可更改的。<br/>
+		
+		static final float regulation=5000; 
+   
+3.根据国家最新工资纳税标准编写算法。<br/>
+
+   		double m;
+		if(sum<=regulation){
+			m=0;
+		}else if(sum>regulation&&sum<=8000){
+			m=regulation*0.03;
+		}else if(sum>8000&&sum<=17000){
+			m=regulation*0.1;
+		}else if(sum>17000&&sum<=30000){
+			m=regulation*0.2;
+		}else{
+			m=regulation*0.3;
+		}
+		return (float) m;
+		
     
 ### 五、系统运行截图
 ![images](https://github.com/ydqgithub/InterfacePractive-/blob/main/images/IE.jpg)
