@@ -75,10 +75,11 @@
 		return (float) m;
 		
     
-### 五、系统运行截图
-![images](https://github.com/ydqgithub/InterfacePractive-/blob/main/images/IE.jpg)
-### 六、实验感想
-1.对抽象类的应用不熟练，原本想将博士研究生类定义成抽象类，但是未能实现。<br/>
-2.理解了接口的定义形式。<br/>
-3.更进一步地学习了Scanner类的应用以及一些小知识点，例如：将一个类的对象传值给方法的参数......<br/>
-4.学习了try()catch(){}异常捕获方法，Exception 覆盖所有异常类型，需要注意书写顺序。<br/>
+### 六、系统运行截图
+![images](https://github.com/ydqgithub/InterfacePractice/blob/main/images/ydq.jpg)
+### 七、实验感想
+1.学习了接口的使用方法，用implement实现接口，若多个接口用逗号分隔。<br/>
+2.学习了Scanner类的特点和用法。<br/>
+3.学习了static 和 final的使用。<br/>
+4.学习了try...catch捕获异常。<br/>
+5.学习了用if...else...语句实现算法。<br/>
