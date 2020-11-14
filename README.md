@@ -58,7 +58,7 @@
 		
 		static final float regulation=5000; 
    
-3.根据国家最新工资纳税标准编写算法。<br/>
+3.根据国家最新工资纳税标准编写算法,使用if...else...语句进行值的限制。<br/>
 
    		double m;
 		if(sum<=regulation){
@@ -76,7 +76,7 @@
 		
     
 ### 六、系统运行截图
-![image](https://github.com/ydqgithub/InterfacePractice/blob/main/images/ydq.jpg)
+![images](https://github.com/ydqgithub/InterfacePractice/blob/main/images/ydq.jpg)
 ### 七、实验感想
 1.学习了接口的使用方法，用implement实现接口，若多个接口用逗号分隔。<br/>
 2.学习了Scanner类的特点和用法。<br/>
